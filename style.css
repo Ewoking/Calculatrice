@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.calculator-wrapper {
+  width: 500px;
+  height: 600px;
+  margin: 50px auto;
+  background-color: rgb(99, 116, 105);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.calc-display {
+  grid-area: 1/1/2/6;
+  background-color: rgb(73, 102, 114);
+  align-self: auto;
+  justify-self: auto;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.result-display {
+  grid-area: 2/1/3/6;
+  background-color: rgb(75, 134, 160);
+  align-self: auto;
+  justify-self: auto;
+  text-align: end;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.calc-button {
+  background-color: rgb(53, 52, 52);
+  font-size: 36px;
+  align-self: auto;
+  justify-self: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.calc-button p {
+  color: rgb(197, 197, 197);
+}
+
+.button-0 {
+  grid-area: 6/2;
+}
+
+.button-1 {
+  grid-area: 5/1;
+}
+
+.button-2 {
+  grid-area: 5/2;
+}
+
+.button-3 {
+  grid-area: 5/3;
+}
+
+.button-4 {
+  grid-area: 4/1;
+}
+
+.button-5 {
+  grid-area: 4/2;
+}
+
+.button-6 {
+  grid-area: 4/3;
+}
+
+.button-7 {
+  grid-area: 3/1;
+}
+
+.button-8 {
+  grid-area: 3/2;
+}
+
+.button-9 {
+  grid-area: 3/3;
+}
+
+.erase {
+  grid-area: 3/4/4/6;
+}
+
+.plus {
+  grid-area: 4/4;
+}
+
+.minus {
+  grid-area: 4/5;
+}
+
+.multiply {
+  grid-area: 5/4;
+}
+
+.divide {
+  grid-area: 5/5;
+}
+
+.equal {
+  grid-area: 6/4/7/6;
+}
+
+.dot {
+  grid-area: 6/3;
+}
+
+.erase {
+  grid-area: 3/4;
+}
+
+.new {
+  grid-area: 3/5;
+}
