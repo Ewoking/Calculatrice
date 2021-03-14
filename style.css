@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Digital-7;
+  src: url("./resources/digital-7.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +25,7 @@ body {
       rgba(0, 0, 0, 0.9),
       rgb(0, 0, 0)
     ),
-    url("./images/Truchet_tiling.svg.png");
+    url("./resources/Truchet_tiling.svg.png");
 }
 
 .calculator-wrapper {
@@ -50,6 +55,7 @@ body {
   overflow: hidden;
   border-bottom: 3px solid rgb(151, 212, 228);
   margin-bottom: -5px;
+  font-family: "Digital-7", sans-serif;
 }
 
 .result-display {
@@ -64,6 +70,7 @@ body {
   align-items: center;
   justify-content: flex-end;
   padding: 20px;
+  font-family: "Digital-7", sans-serif;
 }
 
 .calc-button {
@@ -76,6 +83,14 @@ body {
   align-items: center;
   user-select: none;
   border-radius: 2%;
+}
+
+.calc-button:hover {
+  background-color: rgb(39, 37, 37);
+}
+
+.calc-button:active {
+  border: 3px solid rgb(233, 137, 53);
 }
 
 .calc-button p {
