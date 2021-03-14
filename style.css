@@ -4,34 +4,58 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+  padding-top: 50px;
+  background-color: rgb(66, 66, 66);
+  /* background-image: linear-gradient(to bottom, transparent 0%, rgb(0, 0, 0) 50%),
+    url("./images/Truchet_tiling.svg.png"); */
+  background-image: radial-gradient(
+      circle at 50% 10%,
+      transparent 0%,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.9),
+      rgb(0, 0, 0)
+    ),
+    url("./images/Truchet_tiling.svg.png");
+}
+
 .calculator-wrapper {
   width: 500px;
   height: 600px;
-  margin: 50px auto;
-  background-color: rgb(99, 116, 105);
+  margin: 0 auto;
+  background-color: rgb(133, 133, 133);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  gap: 20px;
-  padding: 20px;
+  gap: 5px;
+  padding: 5px;
+  border-bottom-left-radius: 50px;
 }
 
 .calc-display {
   grid-area: 1/1/2/6;
-  background-color: rgb(73, 102, 114);
+  /* background-color: rgb(19, 36, 42); */
+  color: rgb(206, 229, 250);
   align-self: auto;
   justify-self: auto;
   font-size: 36px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 10px;
+  padding: 20px;
   overflow: hidden;
+  border-bottom: 3px solid rgb(151, 212, 228);
+  margin-bottom: -5px;
 }
 
 .result-display {
   grid-area: 2/1/3/6;
-  background-color: rgb(75, 134, 160);
+  /* background-color: rgb(22, 29, 32); */
+  color: rgb(206, 229, 250);
   align-self: auto;
   justify-self: auto;
   text-align: end;
@@ -39,11 +63,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 10px;
+  padding: 20px;
 }
 
 .calc-button {
-  background-color: rgb(53, 52, 52);
+  background-color: rgb(51, 48, 48);
   font-size: 36px;
   align-self: auto;
   justify-self: auto;
@@ -51,10 +75,22 @@
   justify-content: center;
   align-items: center;
   user-select: none;
+  border-radius: 2%;
 }
 
 .calc-button p {
   color: rgb(197, 197, 197);
+}
+
+.glass {
+  grid-area: 1/1/3/6;
+  /* background-color: rgba(195, 195, 255, 0.2); */
+  z-index: 5;
+  border: 15px solid rgb(26, 35, 39);
+}
+
+.display {
+  background-color: rgb(26, 35, 39);
 }
 
 .button-0 {
@@ -119,6 +155,12 @@
 
 .equal {
   grid-area: 6/4/7/6;
+  background-color: rgb(233, 137, 53);
+}
+
+.equal p {
+  color: black;
+  font-weight: 600;
 }
 
 .dot {

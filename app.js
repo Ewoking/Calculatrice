@@ -9,16 +9,17 @@ calcDisplay.textContent="";
 resultDisplay.textContent = result;
 
 let isCorrectMath = str => {
-        let re1 = /[\-\+\*\/\.][\-\+\*\/\.]/g;
-
+        let re1 = /[\-\+\*\/][\-\+\*\/]/g;
+        let re2 = /\d[\-\+\*\/][\-\+\*\/]\d/;
         if(re1.test(str)){
                 console.log("aie!");
-                for(let exp of str.match(re1)){
-                        console.log(exp);
-                        if(exp != "**"){
-                                return false;
-                        }
-                }    
+                let matches = str.matchAll(re1);
+                console.log(matches);
+                // for(let i in matches){
+                //         if(match[i] == "**"){
+                        
+                //         }
+                // }    
         }
         return true;
 }
@@ -31,7 +32,7 @@ let doTheMaths = str => {
 }
 
 let clickSymbol = e => {
-        console.log(e.currentTarget);
+        //console.log(e.currentTarget);
         if (e.currentTarget.dataset.symbol === "new"){
                 console.log("reset !");
                 calcDisplay.textContent ="";
