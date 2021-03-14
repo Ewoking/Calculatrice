@@ -32,12 +32,13 @@ body {
   width: 500px;
   height: 600px;
   margin: 0 auto;
-  background-color: rgb(133, 133, 133);
+  background-color: rgb(190, 189, 189);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(6, 1fr);
   gap: 5px;
   padding: 5px;
+  border-radius: 3px;
   border-bottom-left-radius: 50px;
 }
 
@@ -47,7 +48,7 @@ body {
   color: rgb(206, 229, 250);
   align-self: auto;
   justify-self: auto;
-  font-size: 36px;
+  font-size: 50px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -56,6 +57,9 @@ body {
   border-bottom: 3px solid rgb(151, 212, 228);
   margin-bottom: -5px;
   font-family: "Digital-7", sans-serif;
+    white-space: nowrap;
+    border-radius: 3px;
+
 }
 
 .result-display {
@@ -65,17 +69,19 @@ body {
   align-self: auto;
   justify-self: auto;
   text-align: end;
-  font-size: 36px;
+  font-size: 55px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 20px;
   font-family: "Digital-7", sans-serif;
+  white-space: nowrap;
+  border-radius: 3px;
 }
 
 .calc-button {
   background-color: rgb(51, 48, 48);
-  font-size: 36px;
+  font-size: 48px;
   align-self: auto;
   justify-self: auto;
   display: flex;
@@ -87,6 +93,14 @@ body {
 
 .calc-button:hover {
   background-color: rgb(39, 37, 37);
+}
+
+.equal:hover {
+  background-color: rgb(255, 115, 0);
+}
+
+.equal:hover p {
+  color: rgb(255, 255, 255);
 }
 
 .calc-button:active {
@@ -102,10 +116,16 @@ body {
   /* background-color: rgba(195, 195, 255, 0.2); */
   z-index: 5;
   border: 15px solid rgb(26, 35, 39);
+  border-radius: 3px;
 }
 
 .display {
   background-color: rgb(26, 35, 39);
+}
+
+.operator p{
+  font-weight: 900;
+  color: rgb(99, 199, 224);
 }
 
 .button-0 {
@@ -184,8 +204,26 @@ body {
 
 .erase {
   grid-area: 3/4;
+  /* background-color: rgb(20, 183, 233); */
+}
+
+.erase:hover {
+  background-color: rgb(20, 183, 233);
+}
+
+.erase:hover p{
+  color: black;
 }
 
 .new {
   grid-area: 3/5;
+  /* background-color: rgb(20, 183, 233); */
+}
+
+.new:hover {
+  background-color: rgb(20, 183, 233);
+}
+
+.new:hover p{
+  color: black;
 }
