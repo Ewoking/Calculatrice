@@ -12,9 +12,7 @@
 body {
   height: 100vh;
   padding-top: 50px;
-  background-color: rgb(66, 66, 66);
-  /* background-image: linear-gradient(to bottom, transparent 0%, rgb(0, 0, 0) 50%),
-    url("./images/Truchet_tiling.svg.png"); */
+  background-color: rgb(36, 54, 77);
   background-image: radial-gradient(
       circle at 50% 10%,
       transparent 0%,
@@ -24,15 +22,17 @@ body {
       rgba(0, 0, 0, 0.8),
       rgba(0, 0, 0, 0.9),
       rgb(0, 0, 0)
-    ),
-    url("./resources/Truchet_tiling.svg.png");
+    ), url("./resources/Truchet_tiling.svg.png");
+    background-blend-mode: soft-light;
 }
+
 
 .calculator-wrapper {
   width: 500px;
   height: 600px;
   margin: 0 auto;
-  background-color: rgb(190, 189, 189);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(6, 1fr);
@@ -59,7 +59,6 @@ body {
   font-family: "Digital-7", sans-serif;
     white-space: nowrap;
     border-radius: 3px;
-
 }
 
 .result-display {
@@ -69,7 +68,7 @@ body {
   align-self: auto;
   justify-self: auto;
   text-align: end;
-  font-size: 55px;
+  font-size: 70px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -80,7 +79,9 @@ body {
 }
 
 .calc-button {
-  background-color: rgb(51, 48, 48);
+  position: relative;
+  background-color: rgba(102, 102, 102, 0.4);
+  /* backdrop-filter: blur(1px); */
   font-size: 48px;
   align-self: auto;
   justify-self: auto;
@@ -88,23 +89,39 @@ body {
   justify-content: center;
   align-items: center;
   user-select: none;
-  border-radius: 2%;
+  border-radius: 4px;
 }
 
-.calc-button:hover {
-  background-color: rgb(39, 37, 37);
+.calc-button::after{
+  content: "";
+  position: absolute;
+  z-index: 5;
+  top: 2px;
+  left: 2px;
+  width: 90%;
+  height: 5px;
+  /* background-color: blue; */
+  border: solid rgba(255, 255, 255, 0.356);
+  border-width: 2px 0 0 2px;
+  border-top-left-radius: 4px;
 }
 
-.equal:hover {
-  background-color: rgb(255, 115, 0);
+.calc-button::before{
+  content: "";
+  position: absolute;
+  z-index: 5;
+  bottom: 2px;
+  right: 2px;
+  width: 90%;
+  height: 5px;
+  /* background-color: blue; */
+  border: solid rgba(0, 0, 0, 0.239);
+  border-width: 0 2px 2px 0;
+  border-bottom-right-radius: 4px;
 }
 
-.equal:hover p {
-  color: rgb(255, 255, 255);
-}
-
-.calc-button:active {
-  border: 3px solid rgb(233, 137, 53);
+.display {
+  background-color: rgb(26, 35, 39);
 }
 
 .calc-button p {
@@ -119,14 +136,14 @@ body {
   border-radius: 3px;
 }
 
-.display {
-  background-color: rgb(26, 35, 39);
-}
-
 .operator p{
   font-weight: 900;
   color: rgb(99, 199, 224);
 }
+
+
+
+/*  =============== BUTTONS =============== */
 
 .button-0 {
   grid-area: 6/2;
@@ -207,6 +224,29 @@ body {
   /* background-color: rgb(20, 183, 233); */
 }
 
+.new {
+  grid-area: 3/5;
+  /* background-color: rgb(20, 183, 233); */
+}
+
+
+
+
+/*  =============== HOVER STATES =============== */
+
+
+.calc-button:hover {
+  background-color: rgba(39, 37, 37, 0.5);
+}
+
+.equal:hover {
+  background-color: rgb(255, 115, 0);
+}
+
+.equal:hover p {
+  color: rgb(255, 255, 255);
+}
+
 .erase:hover {
   background-color: rgb(20, 183, 233);
 }
@@ -215,15 +255,14 @@ body {
   color: black;
 }
 
-.new {
-  grid-area: 3/5;
-  /* background-color: rgb(20, 183, 233); */
-}
-
 .new:hover {
   background-color: rgb(20, 183, 233);
 }
 
 .new:hover p{
   color: black;
+}
+
+.calc-button:active {
+  border: 3px solid rgb(233, 137, 53);
 }
