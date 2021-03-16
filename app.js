@@ -31,6 +31,16 @@ let doTheMaths = str => {
         }
 }
 
+let formatResult = res => {
+
+        let num = parseFloat(res);
+
+        if(resultDisplay.clientWidth > resultDisplay.parentElement.clientWidth){
+                num = num.toPrecision(9);
+                resultDisplay.textContent = num.toString();
+        }
+}
+
 
 /*Callback function of the EventListeners of the calculator's buttons */
 let clickSymbol = e => {
@@ -58,7 +68,8 @@ let clickSymbol = e => {
                 console.log("do the maths");
                 result = doTheMaths(calcDisplay.textContent);
                 resultDisplay.textContent = result;
-                if(result != "Syntax Error"){
+                formatResult(result);
+                if(result !== "Syntax Error" && result !== Infinity){
                         savedResult = result;
                 }
         
